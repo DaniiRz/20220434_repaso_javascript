@@ -5,53 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="image/png" rel="icon" href="./img/logo tarea.png">
-    <title>Inicio</title>
+    <title>Arreglos Javascript</title>
+    <link rel="stylesheet" href="./index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<header>
-    <h3 class="text-center mt-5">Ejercicio 1</h3>
-    <p class="text-center mt-3">Arreglos en Javacript</p>
-</header>
 
 <body>
-    <div class="container-flui justify-content-center mt-5">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="100px">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-                </div>
-            </div>
+
+
+    <div class="container-fluid" id="contenedor">
+        <h3 class="text-center mt-5">Ejercicio 1</h3>
+        <p class="text-center mt-3">Arreglos en Javacript</p>
+        <div class="row mt-5" id="userCardsContainer">
+
+            <!-- Los cards se agregarán aquí dinámicamente -->
         </div>
     </div>
 
+    <script>
+        const users = [
+            {
+                name: 'Justin Bieber',
+                avatar: 'https://aws-modapedia.vogue.es/prod/designs/v1/assets/640x929/1089.jpg',
+            },
+            {
+                name: 'Joao Felix',
+                avatar: 'https://i.pinimg.com/736x/3b/57/19/3b571900890ece98c1d44b6a79cf43e3.jpg',
+            },
+            {
+                name: 'Real Madrid',
+                avatar: 'https://s1.sportstatics.com/relevo/www/multimedia/202312/13/media/cortadas/real-madrid-union-berlin-RrvsbAP2ck23m2LujQenreI-1200x648@Relevo.jpg',
+            },
+            {
+                name: 'Perro',
+                avatar: 'https://clubmac.mx/wp-content/uploads/2019/11/IMG_3953-1024x1003.jpg',
+            },
+            {
+                name: 'Chase Atlantic',
+                avatar: 'https://www.c-heads.com/wp-content/uploads/2019/03/IMG_9146.jpg',
+            },
+            {
+                name: 'Artic Monkeys',
+                avatar: 'https://www.releaseathens.gr/wp-content/uploads/2022/12/Arctic-Monkeys.jpg',
+            },
+            {
+                name: 'Fresas',
+                avatar: 'https://static.tuasaude.com/media/article/ry/ku/fresa_59601_l.jpg',
+            }, 
+            {
+                name: 'Cielo',
+                avatar: 'https://noticiasncc.com/wp-content/uploads/2021/03/321-4-CIENCIA_porquecieloazul_Foto-de-an_vision-en-Unsplash.jpg',
+            },
+            {
+                name: 'Playa',
+                avatar: 'https://puertoplatanoticias.com/wp-content/uploads/2022/04/que_significa_sonar_con_la_playa_5854_600.jpg',
+            },
+            {
+                name: 'Comida',
+                avatar: 'https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2023-06-chicken-alfredo-pasta-reshoot%2Fchicken-alfredo-pasta-2-vertical',
+            },
+            {
+                name: 'Familia',
+                avatar: 'https://concepto.de/wp-content/uploads/2015/08/familia-extensa-e1591818025158-800x400.jpg',
+            },
+            {
+                name: 'K-Dramas',
+                avatar: 'https://www.musicmundial.com/wp-content/uploads/2023/09/Los-3-k-dramas-Netflix-de-romance-que-te-haran-luchar-por-el-amor-de-tu-vida-1.jpg',
+            }
+        ];
+
+        // Obtener el contenedor donde se mostrarán los cards
+        const userCardsContainer = document.getElementById('userCardsContainer');
+
+        // Iterar sobre el array de usuarios
+        users.forEach(user => {
+            // Crear un elemento div para el card de Bootstrap
+            const card = document.createElement('div');
+            card.classList.add('col-md-3', 'mb-4');
+
+            // Configurar el contenido del card
+            card.innerHTML = `
+          <div class="card">
+            <img src="${user.avatar}" class="" alt="${user.name}" width="100">
+            <div class="card-body">
+              <h5 class="card-title">${user.name}</h5>
+            </div>
+          </div>
+        `;
+
+            // Agregar el card al contenedor
+            userCardsContainer.appendChild(card);
+        });
+    </script>
 
 
 

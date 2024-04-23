@@ -1,0 +1,17 @@
+body,html{
+    background-color: aliceblue;
+}
+
+#contenedor{
+    background-color: aliceblue;
+}
+
+.card{
+    height: 100%;
+    width: 50%;
+}
+
+.img{
+    justify-content: center;
+    display: flex; 
+}
